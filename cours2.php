@@ -129,7 +129,7 @@ switch ($sexe) {
         echo " est un homme";
         break;
     case "F":
-        echo "est une femme";
+        echo " est une femme";
         break;
     case "":
         echo " sexe indefini";
