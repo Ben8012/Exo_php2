@@ -34,6 +34,7 @@ function ajouteAuTableau($tab,$valeur){
 
 }
 echo "EX1 : ";
+echo "<pre>";
 $tableau1 = ajouteAuTableau($tableau1,"cerise");
 var_dump($tableau1);
 echo "<br>";
@@ -73,6 +74,7 @@ function merge2Tab($tab1,$tab2){
 }
 
 echo "EX3 : ";
+echo "<pre>";
 var_dump(merge2Tab($tableau1,$tableau2));
 echo "<br>";
 echo "-----------------------------------------------------------------";
@@ -95,6 +97,7 @@ function verifieSiTabVide($tab){
     return $arrayNull;
 }
 echo "EX4 : ";
+echo "<pre>";
 var_dump(verifieSiTabVide($tableau3));
 echo "<br>";
 echo "-----------------------------------------------------------------";
@@ -159,7 +162,7 @@ echo "<br>";
 
 echo "Intilé du cours : ".$tableau4["cours"];
 echo "<br>";
-echo "Local :".$tableau4["local"]["numero"];
+echo "Local : ".$tableau4["local"]["numero"];
 echo "<br>";
 echo "Nombre d'eleves : ".$tableau4["local"]["nbPlace"];
 echo "<br>";
@@ -275,29 +278,10 @@ echo "<br>";
 echo "EX7 : ";
 
 array_push($tableau4["local"]["etudiants"],$tableau6,$tableau7);
-
-foreach($tableau4 as $key => $value){
-    if( $key == "local"){
-        foreach($value as $key2 => $value2){
-            if( $key2 == "etudiants"){
-                foreach($value2 as $key3 => $value3){
-                    //echo $key3;
-                    if($key3 == 0){
-                        $tableau4["local"]["etudiants"]["etudiant5"]=$tableau4["local"]["etudiants"][0] ;
-                        
-                        unset($tableau4["local"]["etudiants"][0]);
-                    }
-                    if($key3 == 1){
-                        $tableau4["local"]["etudiants"]["etudiant6"]=$tableau4["local"]["etudiants"][1] ;
-                        
-                        unset($tableau4["local"]["etudiants"][1]);
-                    } 
-                }
-            }
-        }
-    }
-
-}
+$tableau4["local"]["etudiants"]["etudiant5"]=$tableau4["local"]["etudiants"][0] ;
+unset($tableau4["local"]["etudiants"][0]);
+$tableau4["local"]["etudiants"]["etudiant6"]=$tableau4["local"]["etudiants"][1] ;
+unset($tableau4["local"]["etudiants"][1]);
 
 echo'<pre>';
 var_dump($tableau4);
@@ -358,10 +342,6 @@ var_dump(retournLadimensionTab5($tableau5,2));
 echo "<br>";
 echo "-----------------------------------------------------------------";
 echo "<br>";
-
-
-
-
 
 echo "EX8 bis : ";
 
