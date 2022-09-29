@@ -295,35 +295,35 @@ echo "<br>";
     du tableau qu'elle recevra en argument.
     [$tableau5]
 */
-
-
 echo "EX8 : ";
+
+
 $tableau5 = [0, 1, [3,[4,5]],[3,[4,[5,6]]]];
-function retournLadimensionTab5($tableau5,$index){
+function retournLadimensionTab5($tableau,$index){
     $i = 0;
     $j = 0;
     $k = 0;
-   foreach($tableau5 as $key => $value){
+   foreach($tableau as $key => $value){
         if($key == $index){
-            return $tableau5[$index];
+            return $tableau[$index];
         }
         $i++;
         if(is_array($value)){
             foreach($value as $key2 => $value2){
                 if($key2 == $index){
-                    return $tableau5[$i][$index];
+                    return $tableau[$i][$index];
                 } 
                 $j++;   
                 if(is_array($value2)){
                     foreach($value2 as $key3 => $value3){
                         if($key3 == $index){
-                            return $tableau5[$i][$j][$index];
+                            return $tableau[$i][$j][$index];
                         } 
                         $k++;   
                         if(is_array($value3)){
                             foreach($value3 as $key4 => $value4){
                                 if($key4 == $index){
-                                    return $tableau5[$i][$j][$k][$index];
+                                    return $tableau[$i][$j][$k][$index];
                                 }     
                            }
                         }
@@ -335,10 +335,11 @@ function retournLadimensionTab5($tableau5,$index){
 }
 
 echo'<pre>';
-//var_dump($tableau5);
+var_dump($tableau5);
 echo "<br>";
-var_dump(retournLadimensionTab5($tableau5,2));
-
+echo "Tableau trouvé : ";
+echo "<br>";
+var_dump(retournLadimensionTab5($tableau5,3));
 echo "<br>";
 echo "-----------------------------------------------------------------";
 echo "<br>";
