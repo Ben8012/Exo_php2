@@ -37,7 +37,7 @@ echo "EX1 : ";
 $tableau1 = ajouteAuTableau($tableau1,"cerise");
 var_dump($tableau1);
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 /*
@@ -56,7 +56,7 @@ function nombreElementTableau($tab){
 echo "EX2 : ";
 echo nombreElementTableau($tableau1);
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 /*
@@ -75,7 +75,7 @@ function merge2Tab($tab1,$tab2){
 echo "EX3 : ";
 var_dump(merge2Tab($tableau1,$tableau2));
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 /*
@@ -97,7 +97,7 @@ function verifieSiTabVide($tab){
 echo "EX4 : ";
 var_dump(verifieSiTabVide($tableau3));
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 
@@ -139,8 +139,11 @@ $tableau4 =[
 
 echo "EX5 : ";
 echo "faire le tableau 4";
+echo'<pre>';
+var_dump($tableau4);
+
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 
@@ -149,12 +152,45 @@ echo "<br>";
     (imaginer qu'il y à un grand nombre d'etudiants)
 */
 
-echo "EX6 : ";
+
+
+echo "EX6  : ";
 echo "<br>";
-echo "<table>";
+
+echo "Intilé du cours : ".$tableau4["cours"];
+echo "<br>";
+echo "Local :".$tableau4["local"]["numero"];
+echo "<br>";
+echo "Nombre d'eleves : ".$tableau4["local"]["nbPlace"];
+echo "<br>";
+echo "<br>";
+echo "<table style='border : 1px solid black;' >";
+echo "<tr>";
+foreach($tableau4["local"]["etudiants"]["etudiant1"] as $key => $value){
+    echo "<th style='border : 1px solid black; padding:2vh'>$key</th>";
+}
+echo "</tr>";
+foreach($tableau4["local"]["etudiants"] as $key => $value){
+    echo "<tr>";
+    foreach($value as $key2 => $value2){
+        echo "<td style='border : 1px solid black; padding:2vh'>$value2</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+    
+echo "<br>";
+echo "-----------------------------------------------------------------";
+echo "<br>";
+
+///////////////////////////////////////////////////////////////////////
+echo "EX6 bis : ";
+echo "<br>";
+
 foreach($tableau4 as $key => $value){
     if(!is_array($value)){
-        echo "$value";
+        echo $value;
     }
     echo "<br>";
     if( $key == "local"){
@@ -225,7 +261,7 @@ foreach($tableau4 as $key => $value){
 }
     
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 
@@ -265,9 +301,9 @@ foreach($tableau4 as $key => $value){
 
 echo'<pre>';
 var_dump($tableau4);
-echo'<\pre>';
+
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 /*
@@ -315,12 +351,12 @@ function retournLadimensionTab5($tableau5,$index){
 }
 
 echo'<pre>';
-var_dump($tableau5);
+//var_dump($tableau5);
 echo "<br>";
-var_dump(retournLadimensionTab5($tableau5,3));
-echo'<\pre>';
+var_dump(retournLadimensionTab5($tableau5,2));
+
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 
@@ -356,9 +392,9 @@ $index = "etudiant6";
 echo "index = ".$index;
 echo'<pre>';
 var_dump(retournLadimension($tableau4,$index));
-echo'<\pre>';
+
 echo "<br>";
-echo "------------";
+echo "-----------------------------------------------------------------";
 echo "<br>";
 
 ?>
