@@ -135,7 +135,8 @@ $tableau4 =[
                                     "nom" => "Coucou",
                                     "prenom" => "Hibou",
                                     "age" => 1337
-                                ],
+                                ]
+                               
                             ]
             ]
 ];
@@ -297,6 +298,18 @@ echo "<br>";
 */
 echo "EX8 : ";
 
+// version Louis 
+// function array_depth($array) {
+//     $depth = $max_depth = 1;
+//     foreach ($array as $v) {
+//         if (is_array($v)) {
+//             $depth = 1 + array_depth($v);
+//             if ($depth > $max_depth) $max_depth = $depth;
+//         }
+//     }
+//     return $max_depth;
+// }
+//
 
 $tableau5 = [0, 1, [3,[4,5]],[3,[4,[5,6]]]];
 function retournLadimensionTab5($tableau,$index){
